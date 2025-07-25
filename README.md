@@ -116,7 +116,7 @@ git push -u origin second-branch
 
 ## 📸 Captures d'écran
 - ![Main Branch](./image/capture/branchmain.png)
-- ![Second Branch](./image/capture/second-branch.png)
+- ![Second Branch](./image/capture/secondbranch.png)
 
 ## 📝 Notes
 - Le Makefile génère un exécutable `tp3_programme`
