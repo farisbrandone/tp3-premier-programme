@@ -36,20 +36,41 @@ cd training-linux/TP3-Premier-programme
 #include <stdlib.h>
 #include <stdio.h>
 
-int somme(int);
+/*
+* this program evaluate and display the result of addition of first n number
+* for exemple, if n=3 the result display = 0+1+2+3=6
+*/
 
-int main(int argc, char **arg) {
-    int i = 10;
-    printf("La somme des %d entiers est %d \n", i, somme(i));
-    return EXIT_SUCCESS;
+/*
+ * declaration of somme function
+ * this function evaluate the addition of first i+1 number
+ * @params i represent the latest value of addition
+ * @return the result of addition
+ * @warning 0=< i
+*/
+int somme(int i);
+
+int main( ){
+    //the number of value we add
+   int i=11;
+   printf("la somme des %d entiers est egale à %d \n", i, somme(i-1) );
+
+   return 0;
+
 }
 
-int somme(int i) {
-    int resultat = 0;
-    for (int k = 0; k <= i; k++)
-        resultat += k;
-    return resultat;
+int somme(int i){
+// initial value of result
+int resultat=0;
+
+// for loop who add successively the value
+ for (int k=0; k<= i; k++){
+    resultat+=k;
+
+ }
+return resultat;
 }
+
 ```
 
 ## 🔧 Compilation avec Makefile
@@ -115,8 +136,12 @@ git push -u origin second-branch
 ```
 
 ## 📸 Captures d'écran
+
+# code capture
 - ![Main Branch code](./image/capture/code-main.png)
 - ![Second Branch](./image/capture/code-second.png)
+
+# Result capture
 - ![Main Branch result compile](./image/capture/result-main.png)
 - ![Second Branch result compile](./image/capture/result-second.png)
 
