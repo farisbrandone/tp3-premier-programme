@@ -42,33 +42,33 @@ cd training-linux/TP3-Premier-programme
 */
 
 /*
- * declaration of somme function
- * this function evaluate the addition of first i+1 number
- * @params i represent the latest value of addition
+ * declaration of add_number function
+ * this function evaluate the addition of first n number
+ * @params latest_value represent the latest value of addition
  * @return the result of addition
- * @warning 0=< i
+ * @warning 0=< latest_value
 */
-int somme(int i);
+int add_number(int latest_value);
 
 int main( ){
     //the number of value we add
-   int i=11;
-   printf("la somme des %d entiers est egale à %d \n", i, somme(i-1) );
+   int number_of_value=11;
+   printf("la somme des %d entiers est egale à %d \n", number_of_value, add_number(number_of_value-1) );
 
    return 0;
 
 }
 
-int somme(int i){
+int add_number(int latest_value){
 // initial value of result
-int resultat=0;
+int result=0;
 
 // for loop who add successively the value
- for (int k=0; k<= i; k++){
-    resultat+=k;
+ for (int k=0; k<= latest_value; k++){
+    result+=k;
 
  }
-return resultat;
+return result;
 }
 
 ```
