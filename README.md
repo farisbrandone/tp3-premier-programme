@@ -36,19 +36,43 @@ cd training-linux/TP3-Premier-programme
 #include <stdlib.h>
 #include <stdio.h>
 
-int somme(int);
+/**
+ * this application subtracts the first 11 number from 0 to 10
+ * and display result
+ */
 
-int main(int argc, char **arg) {
-    int i = 10;
-    printf("La somme des %d entiers est %d \n", i, somme(i));
-    return EXIT_SUCCESS;
+
+ /**
+ * declaration of subtracts function
+ * this function evaluate the successive subtraction of n value with initial value equal 0
+ *  exemple: for three first number, the result return = 0-1-3=-4
+ * @param latest_value represent the latest number to subtracts
+ * @return the result of successive subtraction  of i+1 number
+ * @warning the value 0=< latest_value
+ */
+ int subtracts(int latest_value);
+
+int main(){
+   //the  number of value we subtracts
+   int number_of_value=11;
+   printf("la soustraction de tous les %d entiers  du premier au dernier est egale à %d \n", number_of_value, subtracts(number_of_value-1));
+
+   return EXIT_SUCCESS;
+
 }
 
-int somme(int i) {
-    int resultat = 0;
-    for (int k = 0; k <= i; k++)
-        resultat += k;
-    return resultat;
+
+//definition of subtracts function
+int subtracts(int latest_value){
+ //initial value of result
+int result=0;
+
+ //successive subtraction loop
+ for (int k=0; k<= latest_value; k++){
+    result-=k;
+
+ }
+ return result;
 }
 ```
 
@@ -115,8 +139,12 @@ git push -u origin second-branch
 ```
 
 ## 📸 Captures d'écran
-- ![Main Branch](./image/capture/branchmain.png)
-- ![Second Branch](./image/capture/secondbranch.png)
+
+## Code
+- ![Main Branch](./image/capture/code-second.png)
+
+## Result
+- ![Second Branch](./image/capture/result-second.png)
 
 ## 📝 Notes
 - Le Makefile génère un exécutable `tp3_programme`
