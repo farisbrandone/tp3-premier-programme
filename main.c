@@ -7,31 +7,31 @@
 */
 
 /*
- * declaration of add_number function
+ * declaration of addNumber function
  * this function evaluate the addition of first n number
- * @params latest_value represent the latest value of addition
+ * @params latestValue represent the latest value of addition
  * @return the result of addition
- * @warning 0=< latest_value
+ * @warning 0=< latestValue
 */
-int add_number(int latest_value);
+int addNumber(int latestValue);
 
 int main( ){
-    //the number of value we add
-   int number_of_value=11;
-   printf("la somme des %d entiers est egale à %d \n", number_of_value, add_number(number_of_value-1) );
+
+   int numberOfValue=11;
+
+   printf("la somme des %d entiers est egale à %d \n", numberOfValue, addNumber(numberOfValue-1) );
 
    return 0;
 
 }
 
-int add_number(int latest_value){
-// initial value of result
-int result=0;
+int addNumber(int latestValue){
+   // initial value of result
+   int result=0;
 
-// for loop who add successively the value
- for (int k=0; k<= latest_value; k++){
-    result+=k;
+   for (int k=0; k<= latestValue; k++){
+      result+=k;
+    }
 
- }
-return result;
+   return result;
 }

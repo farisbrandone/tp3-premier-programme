@@ -1,32 +1,32 @@
-# Définir le compilateur
+# Define compiler
 CC = gcc
 
-# Options de compilation
+# Compilation options
 CFLAGS = -Wall -Wextra -g
 
-# Nom de l'exécutable final
+# Final executable name
 TARGET = tp3_programme
 
-# Fichiers sources (.c)
+# Sources files (.c)
 SRCS = main.c
 
-# Fichiers objets (.o) générés
+# Generated object (.o) files
 OBJS = $(SRCS:.c=.o)
 
-# Règle principale
+# Main rule
 all: $(TARGET)
 
-# Génération de l'exécutable
+# Generation of the executable
 $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
-# Compilation des fichiers objets
+# Compilation of objects files
 %.o: %.c
 	$(CC) $(CFLAGS) -c $<
 
-# Nettoyage
+# cleaning
 clean:
 	rm -f $(OBJS) $(TARGET)
 
-# Réinstaller
+# Reinstall
 re: clean all
