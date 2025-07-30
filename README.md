@@ -1,84 +1,40 @@
-# TP3 - Premier programme en C sous Linux
+# TP3 - First C program under Linux
 
-Ce projet démontre l'installation des outils de développement, la création d'un programme C simple, sa gestion avec Git/GitHub et la compilation via Makefile.
+This project demonstrates how to install development tools, create a simple c project, manage it with git and github and compile it with Makefile.
 
 ## 📋 Prérequis
-- Système Linux (Debian/Ubuntu)
-- Accès terminal avec droits `sudo`
+- Linux system (Debian/Ubuntu)
+-Access terminal with `sudo`
 
 ## 🛠️ Installation
 
-### 1. Installation de Git
+### 1. Installation of Git
 ```bash
 sudo apt-get update
 sudo apt-get install git-all
 git --version
 ```
 
-### 2. Installation de Code::Blocks (optionnel)
+### 2. Installation of Code::Blocks
 ```bash
-tar -xvf codeblocks_25.03_amd64_debian12.tar.xz # Décompression
+tar -xvf codeblocks_25.03_amd64_debian12.tar.xz # decompression
 sudo dpkg -i ./*.deb                  # Installation
-sudo apt install -f                   # Résolution des dépendances
-codeblocks --version                  # Vérification
+sudo apt install -f                   # resolving dependencies
+codeblocks --version                  # Verification
 ```
 
-## 🚀 Configuration du projet
+## 🚀 Setting project
 
-### Structure des dossiers
+### Folder structures
 ```bash
 mkdir -p training-linux/TP3-Premier-programme
 cd training-linux/TP3-Premier-programme
 ```
 
-### Programme C (`main.c`)
-```c
-#include <stdlib.h>
-#include <stdio.h>
 
-/**
- * this application subtracts the first 11 number from 0 to 10
- * and display result
- */
+## 🔧 Compilation with Makefile
 
-
- /**
- * declaration of subtracts function
- * this function evaluate the successive subtraction of n value with initial value equal 0
- *  exemple: for three first number, the result return = 0-1-3=-4
- * @param latest_value represent the latest number to subtracts
- * @return the result of successive subtraction  of i+1 number
- * @warning the value 0=< latest_value
- */
- int subtracts(int latest_value);
-
-int main(){
-   //the  number of value we subtracts
-   int number_of_value=11;
-   printf("la soustraction de tous les %d entiers  du premier au dernier est egale à %d \n", number_of_value, subtracts(number_of_value-1));
-
-   return EXIT_SUCCESS;
-
-}
-
-
-//definition of subtracts function
-int subtracts(int latest_value){
- //initial value of result
-int result=0;
-
- //successive subtraction loop
- for (int k=0; k<= latest_value; k++){
-    result-=k;
-
- }
- return result;
-}
-```
-
-## 🔧 Compilation avec Makefile
-
-### Fichier `Makefile`
+### File `Makefile`
 ```makefile
 CC = gcc
 CFLAGS = -Wall -Wextra -g
@@ -108,7 +64,7 @@ make clean  # Nettoie
 make re     # Recompile
 ```
 
-## 📦 Gestion avec Git/GitHub
+## 📦 Manage with Git/GitHub
 
 ### Initialisation
 ```bash
@@ -117,13 +73,13 @@ git config --global user.email "Vous@exemple.com"
 git config --global user.name "Votre Nom"
 ```
 
-### Connexion SSH
+### SSH Connexion
 ```bash
 ssh-keygen -t ed25519 -C "farisbrandone@yahoo.com"
-cat ~/.ssh/id_rsa.pub  # À copier dans GitHub > Settings > SSH Keys
+cat ~/.ssh/id_rsa.pub  # To copy on GitHub > Settings > SSH Keys
 ```
 
-### Premier push
+### First push
 ```bash
 git add .
 git commit -m "Initial commit"
@@ -132,25 +88,22 @@ git remote add origin git@github.com:farisbrandone/tp3-premier-programme.git
 git push -u origin main
 ```
 
-### Création d'une branche
+### Create branch
 ```bash
 git checkout -b second-branch
 git push -u origin second-branch
 ```
 
-## 📸 Captures d'écran
-
-## Code
-- ![Main Branch](./image/capture/code-second.png)
+## 📸 screenshot
 
 ## Result
 - ![Second Branch](./image/capture/result-second.png)
 
 ## 📝 Notes
-- Le Makefile génère un exécutable `tp3_programme`
-- Options de compilation :
-  - `-Wall -Wextra` : Active tous les avertissements
-  - `-g` : Génère des symboles de débogage
+- The Makefile generates an executable `tp3_programme`
+-  compilation Options :
+  - `-Wall -Wextra` : activates all warnings
+  - `-g` : generates debugging symbols
 
 ---
 
